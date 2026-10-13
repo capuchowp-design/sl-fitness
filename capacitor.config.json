@@ -1,0 +1,6 @@
+{
+  "appId": "io.github.meuidwp.slfitness",
+  "appName": "SL Fitness",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
