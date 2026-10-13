@@ -27,8 +27,14 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android
+      - name: Initialize Capacitor Android if missing
+        run: |
+          if [ ! -d "android" ]; then
+            npx cap init "SL Fitness" "io.github.meuidwp.slfitness" --web-dir dist --yes
+            npx cap add android
+          else
+            npx cap sync android
+          fi
 
       - name: Build Android Release APK with Gradle
         run: |
